@@ -356,7 +356,6 @@ class TestLanguageSelectorRendering(LinguaPloneTestCase):
         de_path = de_root.absolute_url()
         de_link = '<a href="%s?set_language=de"' % de_path
         self.assert_(de_link in output)
-        import pdb;pdb.set_trace()
         self.assert_('set_language=no' not in output)
 
     def testRenderSelectorWithFlags(self):
