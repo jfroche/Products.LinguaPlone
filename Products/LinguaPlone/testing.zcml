@@ -1,0 +1,21 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           xmlns:five="http://namespaces.zope.org/five">
+
+  <include package="Products.LinguaPlone"/>
+  <genericsetup:registerProfile
+      name="LinguaPlone_tests"
+      title="LinguaPlone Tests"
+      directory="profiles/test_types"
+      description="Test layer for Multi-lingual support for Plone"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <five:deprecatedManageAddDelete class=".tests.dummy.BTreeFolder" />
+  <five:deprecatedManageAddDelete class=".tests.dummy.DynamicFolder" />
+  <five:deprecatedManageAddDelete class=".tests.dummy.OrderedFolder" />
+  <five:deprecatedManageAddDelete class=".tests.dummy.SimpleFolder" />
+  <five:deprecatedManageAddDelete class=".tests.dummy.SimpleType" />
+
+</configure>

@@ -27,6 +27,8 @@ setup(name='Products.LinguaPlone',
       namespace_packages=['Products'],
       include_package_data=True,
       zip_safe=False,
+      extras_require=dict(
+            test=['zope.testing', 'unittest2', 'plone.testing', 'plone.app.testing', 'plone.app.bbb_testing']),
       install_requires=[
         'setuptools',
         'AccessControl',

@@ -132,12 +132,12 @@ class TestCopyCriteria(CopyCriteriaTestCase):
     def testCurrentAuthorCriterion(self):
         self.encoll.addCriterion('author', 'ATCurrentAuthorCriterion')
         query = self.encoll.buildQuery()
-        self.assertEquals(query, {'author': 'portal_owner'})
+        self.assertEquals(query, {'author': 'admin'})
 
         # Check the criterion has been copied over
         sync_collections(self.encoll)
         query = self.nocoll.buildQuery()
-        self.assertEquals(query, {'author': 'portal_owner'})
+        self.assertEquals(query, {'author': 'admin'})
 
     def testDateCriterion(self):
         crit = self.encoll.addCriterion('modified', 'ATFriendlyDateCriteria')

@@ -6,6 +6,7 @@ from Products.LinguaPlone.public import AlreadyTranslated
 from Products.LinguaPlone.tests.base import LinguaPloneTestCase
 from Products.LinguaPlone.tests.utils import makeContent
 from Products.LinguaPlone.tests.utils import makeTranslation
+from Products.LinguaPlone.testing import LINGUAPLONE_INTEGRATION_TESTING
 
 
 def sortTuple(t):
@@ -16,7 +17,8 @@ def sortTuple(t):
 
 class TestAPI(LinguaPloneTestCase):
 
-    def afterSetUp(self):
+    def setUp(self):
+        super(TestAPI, self).setUp()
         self.addLanguage('de')
         self.addLanguage('fr')
         self.setLanguage('en')
